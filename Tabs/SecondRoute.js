@@ -74,19 +74,18 @@ const SecondRoute = () => {
   
   const storeRemark = () => {
     if(npo === true){
-      checkvalue.push("NPO");
+      checkvalue.push("(NPO) ");
     }
     if(refuse === true){
-      checkvalue.push("拒絕");
+      checkvalue.push("(拒絕) ");
     }
     if(out === true){
-      checkvalue.push("OUT");
+      checkvalue.push("(OUT) ");
     }
     if(hold === true){
-      checkvalue.push("HOLD");
+      checkvalue.push("(HOLD) ");
     }
     Alert.alert("已儲存");
-    checkvalue.pop();
   }
 
   const cancelRemark = () => {
@@ -117,7 +116,7 @@ const SecondRoute = () => {
           "prescription_id": prescription.id,
           "user_id": user_id,
           "check_time": pchecktime,
-          "remark": textAreaValue + checkvalue,
+          "remark": checkvalue + textAreaValue,
           "state": (textAreaValue != null && checkvalue != null) ? 0 : 1,
           "confirm_user_id": fconfirm,
         });

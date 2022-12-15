@@ -18,7 +18,6 @@ const wait = timeout => {
 
 const FourthRoute = () => {
   const [data, setData] = useState([]);
-  const [patient_data, setPatientData] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = useCallback(() => {
@@ -41,21 +40,6 @@ const FourthRoute = () => {
       console.log(err)
     }
   }
-
-  // const getpatientdata = async () => {
-  //   try{
-  //     const res = await axios.get('/check_histories/' + data.);
-  //     if (res.data.status == 200) {
-  //       console.log(res.data.data)
-  //       global.checkhistory = res.data.data
-  //       //setData(res.data.data)
-  //     } else {
-  //       console.log('fail')
-  //     }
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
 
   useEffect(() => {
     if (data.length === 0){   //如果我清光就改成!data
